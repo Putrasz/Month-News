@@ -8,34 +8,36 @@ export default function TabTwoScreen() {
       <ScrollView contentContainerStyle={styles.content}>
         {/* Header Image */}
         <Image
-          source={{ uri: 'https://via.placeholder.com/300' }} // Replace with your app's image URL
+          source={require('../../assets/images/icon.png')} // Menggunakan gambar lokal
           style={styles.headerImage}
           resizeMode="contain"
         />
         
-        {/* Title */}
-        <ThemedText style={styles.title}>Welcome to My App</ThemedText>
+        <ThemedText style={styles.title}>Selamat datang di Aplikasi Saya</ThemedText>
 
-        {/* Description */}
         <ThemedText style={styles.description}>
-          This app is designed to help you stay updated with the latest health news, 
-          access helpful tools, and enjoy an intuitive experience with a user-friendly interface.
+          Aplikasi ini menyajikan berita terkini yang tentunya ditampilkan dengan antarmuka yang friendly.
         </ThemedText>
 
-        {/* Add more sections as needed */}
         <ThemedText style={styles.sectionTitle}>Features</ThemedText>
         <ThemedText style={styles.description}>
-          - Stay informed with the latest health articles.{'\n'}
-          - Easy-to-navigate tabs.{'\n'}
-          - Personalized content tailored to your needs.
+          - Berita Terkini: Menyajikan berita terbaru dari berbagai bidang dan kategori.{'\n'}
+          {'\n'}
+          - Filter Kategori: Pengguna dapat memilih kategori berita yang mereka inginkan, seperti Olahraga, Politik, Teknologi, dan lainnya.{'\n'}
+          {'\n'}
+          - Navigasi Mudah: Navigasi antar halaman aplikasi sangat mudah dengan penggunaan ikon dan tombol yang sederhana.{'\n'}
+          {'\n'}
+          - Detail Berita: Pengguna dapat melihat detail dari setiap berita, dengan deskripsi lengkap dan gambar yang mendukung.{'\n'}
         </ThemedText>
 
-        {/* Add an image or other visual elements */}
-        <Image
-          source={{ uri: 'https://via.placeholder.com/200' }} // Replace with another relevant image URL
-          style={styles.featureImage}
-          resizeMode="cover"
-        />
+        <ThemedText style={styles.sectionTitle}>Cara Menggunakan Aplikasi Ini</ThemedText>
+        <ThemedText style={styles.description}>
+        1. Buka aplikasi: Setelah membuka aplikasi, pengguna akan melihat daftar berita terkini.{'\n'}
+        {'\n'}
+        2. Gunakan Filter: Klik ikon filter di pojok kanan atas untuk memilih kategori berita yang diinginkan.{'\n'}
+        {'\n'}
+        3. Lihat Detail: Klik pada "Mau lihat selengkapnya? Klik aja!" untuk melihat detail berita secara lengkap.
+        </ThemedText>
       </ScrollView>
     </ThemedView>
   );
@@ -72,10 +74,5 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
-  featureImage: {
-    width: '100%',
-    height: 150,
-    borderRadius: 10,
-    marginTop: 15,
-  },
+
 });
