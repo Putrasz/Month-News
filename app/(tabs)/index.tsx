@@ -17,26 +17,25 @@ import { Picker } from '@react-native-picker/picker';
 const data = [
   {
     id: "1",
-    title: "Hasil UEFA Champions League",
-    description: "Final UEFA Champions League baru saja berakhir.",
-    category: "Olahraga",
-    image: require('../../assets/images/images_berita/Hasil_UEFA.png'), // Gambar lokal
+    title: "Kerikil Bentuk Donat Berusia 12.000 Tahun Jadi Cikal Bakal Roda",
+    description: "Kerikil Bentuk Donat Berusia 12.000 Tahun, menjadi Cikal Bakal Roda hingga banyaknya roda saat ini.",
+    category: "Pengetahuan",
+    image: require('../../assets/images/images_berita/cikalbakalroda.png'), // Gambar lokal
   },
   {
     id: "2",
-    title: "Politik Internasional",
-    description: "Isu politik internasional semakin memanas.",
+    title: "Rindu Prabowo Ingin Pulang ke Indonesia di Tengah Lawatan Mancanegara",
+    description: "Momen Presiden Prabowo Memulai Lawatan Perdana ke Luar Negeri (Foto: ANTARA FOTO/MUHAMMAD ADIMAJA)",
     category: "Politik",
-    image: require('../../assets/images/images_berita/prbw.jpg'), // Gambar lokal
+    image: require('../../assets/images/images_berita/prbw.png'), // Gambar lokal
   },
   {
     id: "3",
-    title: "Inovasi Teknologi 2024",
-    description: "Teknologi baru yang mengubah dunia di tahun 2024.",
-    category: "Teknologi",
-    image: "https://via.placeholder.com/150", // Gambar URL
+    title: "Duh, Mohamed Salah Dianggap Bukan Kelas Dunia",
+    description: "Liverpool - Eks pemain Watford, Troy Deeney, mengomentari performa Mohamed Salah di Liverpool. Menurutnya Si Raja Mesir belum berada di level dunia.",
+    category: "Olahraga",
+    image: require("../../assets/images/images_berita/salah.jpg"), // Gambar URL
   },
-  // Berita lainnya
 ];
 
 export default function Home() {
@@ -60,7 +59,7 @@ export default function Home() {
         <Text style={styles.description}>{item.description}</Text>
       </View>
       <Link href={`/details/${item.id}`} style={styles.link}>
-        Mau lihat selengkapnya? Klik aja!
+        Mau lihat selengkapnya? Klik di sini!
       </Link>
     </TouchableOpacity>
   );
@@ -98,6 +97,7 @@ export default function Home() {
               <Picker.Item label="Olahraga" value="Olahraga" />
               <Picker.Item label="Politik" value="Politik" />
               <Picker.Item label="Teknologi" value="Teknologi" />
+              <Picker.Item label="Pengetahuan" value="Pengetahuan" />
             </Picker>
             <TouchableOpacity
               style={styles.closeButton}
