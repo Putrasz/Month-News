@@ -19,7 +19,7 @@ export default function TabTwoScreen() {
           Aplikasi ini menyajikan berita terkini yang tentunya ditampilkan dengan antarmuka yang friendly.
         </ThemedText>
 
-        <ThemedText style={styles.sectionTitle}>Features</ThemedText>
+        <ThemedText style={styles.sectionTitle}>Fitur</ThemedText>
         <ThemedText style={styles.description}>
           - Berita Terkini: Menyajikan berita terbaru dari berbagai bidang dan kategori.{'\n'}
           {'\n'}

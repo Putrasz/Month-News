@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#656bb9"
     },
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
