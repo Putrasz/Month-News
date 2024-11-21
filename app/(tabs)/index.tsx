@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, Modal, } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity, Modal } from "react-native";
 import { Link } from "expo-router"; // Untuk navigasi
 import { Ionicons } from "@expo/vector-icons"; // Mengimpor ikon
 import { Picker } from "@react-native-picker/picker";
@@ -204,10 +203,10 @@ export default function Home() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.header}>BERITA TERKINI</Text>
 
-      {/* Tempatkan filter di bawah header */}
+      {/* Filter button */}
       <View style={styles.filterContainer}>
         <TouchableOpacity
           style={styles.filterButton}
@@ -254,74 +253,71 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.list}
       />
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8fd3fc",
+    backgroundColor: "#f0f4f7", // Warna latar belakang yang lebih modern
     paddingHorizontal: 10,
-    overflow: "hidden", // Menghilangkan scrollbar
+    paddingTop: 40, // Menambahkan padding untuk menghindari area status bar
   },
   header: {
-    fontSize: 25,
-    fontWeight: "900",
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#333",
     textAlign: "center",
-    marginTop: 10,
-    marginBottom: 15,
+    marginBottom: 20,
   },
   list: {
-    paddingVertical: 10, // Mengurangi ruang vertikal
-    paddingBottom: 0, // Menghilangkan ruang bawah untuk mencegah overflow
+    paddingVertical: 10,
   },
   card: {
-    backgroundColor: "#fff7f4",
-    borderRadius: 10,
-    marginBottom: 15,
+    backgroundColor: "#cbefff",
+    borderRadius: 15,
+    marginBottom: 20,
     overflow: "hidden",
-    elevation: 3,
+    elevation: 5,
     shadowColor: "#000",
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.2,
     shadowRadius: 10,
-    width: "100%", // Pastikan card mengambil lebar penuh
-    alignItems: "center", // Gambar dan konten terpusat secara horizontal
   },
   image: {
-    width: "100%", // Gambar memenuhi lebar kartu
-    height: 200, // Sesuaikan tinggi gambar
+    width: "100%",
+    height: 180,
     resizeMode: "cover",
   },
   content: {
-    padding: 10,
-    justifyContent: "center", // Agar konten terpusat secara vertikal
-    alignItems: "center", // Menjaga teks tetap di tengah secara horizontal
+    padding: 15,
   },
   title: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 5,
-    textAlign: "center", // Pastikan judul berada di tengah
+    color: "#333",
+    marginBottom: 10,
   },
   description: {
     fontSize: 14,
     color: "#666",
     marginBottom: 10,
-    textAlign: "center", // Pastikan deskripsi di tengah
   },
   link: {
     fontSize: 14,
     color: "#007bff",
-    textAlign: "center", // Teks link juga di tengah
-    padding: 5,
+    marginLeft: 15,
+    textAlign: "left",
+    fontWeight: "bold",
+    marginTop: 10,
   },
   filterContainer: {
-    alignItems: "flex-end", // Posisikan filter ke kanan
+    alignItems: "flex-end",
+    marginBottom: 10,
   },
   filterButton: {
     backgroundColor: "#007bff",
-    padding: 6,
+    padding: 10,
     borderRadius: 50,
     elevation: 5,
   },
@@ -335,27 +331,29 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: "#fff",
     padding: 20,
-    borderRadius: 10,
+    borderRadius: 15,
+    alignItems: "center",
   },
   modalTitle: {
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 15,
-    textAlign: "center",
   },
   picker: {
-    height: 50,
-    width: 200,
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#ccc",
   },
   closeButton: {
     backgroundColor: "#007bff",
-    paddingVertical: 10,
-    marginTop: 15,
+    padding: 10,
     borderRadius: 5,
+    marginTop: 20,
+    width: "100%",
+    alignItems: "center",
   },
   closeButtonText: {
     color: "#fff",
-    textAlign: "center",
     fontSize: 16,
   },
 });

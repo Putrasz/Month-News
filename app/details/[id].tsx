@@ -6,7 +6,7 @@ const detailsData: Record<
   string,
   { title: string; description: string; image: string }
 > = {
-  "1": {
+"1": {
     title: "Kerikil Bentuk Donat Berusia 12.000 Tahun Jadi Cikal Bakal Roda",
     description: `Jakarta - Para arkeolog di Israel mengidentifikasi kerikil berusia 12.000 tahun yang diperkirakan merupakan salah satu contoh paling awal teknologi roda yang pernah ditemukan.
 Menurut penelitian yang diterbitkan Rabu,13 November 2024 di jurnal PLOS One, kerikil-kerikil ini berbentuk seperti donat, yang mungkin merupakan lingkaran poros. Sekitar 100 lingkaran spindel tersebut merupakan kerikil berlubang yang memungkinkan tongkat dimasukkan untuk memudahkan pemintalan tekstil menggunakan rami atau wol.
@@ -50,7 +50,7 @@ Namun, Carole Cheval , seorang peneliti dengan keahlian dalam tekstil prasejarah
   },
 
   "2": {
-    title: "Politik Internasional",
+    title: "Rindu Prabowo Ingin Pulang ke Indonesia di Tengah Lawatan Mancanegara",
     description: `Jakarta - Presiden Prabowo Subianto tengah melakukan kunjungan kerja sejak awal November 2024 hingga saat ini. Di tengah lawatan mancanegara itu, Prabowo mengaku ingin pulang ke tanah air.
 Prabowo mulai bertolak ke luar negeri yakni pada 8 November 2024. Prabowo memulai lawatannya pertama kali dengan berkunjung ke China.
 
@@ -442,17 +442,21 @@ export default function Details() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Tampilkan gambar berdasarkan ID */}
-      <Image
-        source={
-          typeof detail.image === "string"
-            ? { uri: detail.image }
-            : detail.image
-        }
-        style={styles.image}
-      />
-      <Text style={styles.title}>{detail.title}</Text>
-      <Text style={styles.description}>{detail.description}</Text>
+      {/* Background Gradien */}
+      <View style={styles.header}>
+        <Image
+          source={
+            typeof detail.image === "string"
+              ? { uri: detail.image }
+              : detail.image
+          }
+          style={styles.image}
+        />
+      </View>
+      <View style={styles.content}>
+        <Text style={styles.title}>{detail.title}</Text>
+        <Text style={styles.description}>{detail.description}</Text>
+      </View>
     </ScrollView>
   );
 }
@@ -460,28 +464,51 @@ export default function Details() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    backgroundColor: "#e8eaf6", // Latar belakang yang lembut
+  },
+  header: {
+    width: "100%",
+    height: 300,
+    backgroundColor: "#3f51b5", // Gradien warna biru
+    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: 25,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
-    backgroundColor: "#f9f9f9",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
   },
   image: {
-    width: "100%",
-    height: 200,
-    borderRadius: 10,
-    marginBottom: 15,
+    width: "80%",
+    height: "80%",
+    borderRadius: 20,
     resizeMode: "cover",
   },
+  content: {
+    padding: 20,
+    marginTop: -50, // Untuk tumpang tindih dengan gambar
+    backgroundColor: "white",
+    borderRadius: 20,
+    marginHorizontal: 17,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+  },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 15,
+    color: "#3f51b5",
+    marginBottom: 10,
     textAlign: "center",
   },
   description: {
     fontSize: 16,
-    lineHeight: 22,
-    marginBottom: 10,
-    textAlign: "left",
+    lineHeight: 24,
+    color: "#000000",
+    textAlign: "justify",
   },
 });
